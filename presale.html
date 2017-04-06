@@ -1,0 +1,532 @@
+<html>
+<head> 
+	<title>Ticketmaster - Lady Antebellum</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="bootstrap/bootstrap-slider.min.css">
+  <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+
+</head>
+<style>
+/* custom inclusion of right, left and below tabs */
+
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #ddd;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+  -webkit-border-radius: 4px 0 0 4px;
+     -moz-border-radius: 4px 0 0 4px;
+          border-radius: 4px 0 0 4px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #dddddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #ddd transparent #ddd #ddd;
+
+}
+
+
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.progress{
+	margin-bottom:0px;
+}
+
+#clockdiv{
+  font-family: sans-serif;
+  color: #fff;
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+#clockdiv > div{
+  padding: 10px;
+  border-radius: 3px;
+  background: black;
+  display: inline-block;
+}
+
+#clockdiv div > span{
+  padding: 15px;
+  border-radius: 3px;
+  background: grey;
+  display: inline-block;
+}
+
+.smalltext{
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+</style>
+<body>
+	<script src="bootstrap/js/jquery-3.2.0.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="bootstrap/bootstrap-slider.min.js"></script>
+
+	<div>
+
+<div class="row">
+<div class="col-lg-12">
+	<img class="center-block" src="images/tmheader.png"/>
+</div>
+</div>
+<div class="row" style="background-color: lightgrey;">
+	<div class="col-lg-8 col-centered" style="height:800px; background-color: white">
+
+<div class="col-lg-12">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Lady Antebellum - Roisin Dubh, Galway - Sept 23 2017</h3>
+  </div>
+
+  <div class="panel panel-warning" style="margin-bottom: 0px">
+  <div class="panel-heading">
+    <h3 class="panel-title">Event Presale</h3>
+  <div class="panel-body">
+  <div class="col-lg-6">
+  Tickets are currently not on sale<br>
+  Tickets on sale at 9am
+  <br>
+  <br>
+  <div class="progress">
+  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    Great Ticket Availability
+  </div>
+</div>  
+<div class="progress">
+  <div id="galwaydemand" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    High Ticket Demand
+  </div>
+</div>
+  </div>
+  <div class="col-lg-6">
+  
+  <div id="clockdiv">
+  <div style="display: none">
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10"><h3>Ticket Search</h3>
+            
+      <!-- tabs left -->
+      <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#d" data-toggle="tab"><i class="fa fa-shopping-cart"></i> Search + Checkout</a></li>
+          <li id="seatspref" ><a href="#a" data-toggle="tab"><span><i class="fa fa-ticket"></i></span> Seat + Ticket Preference </a></li>
+          <li id="paypref"><a href="#b" data-toggle="tab"><i class="fa fa-credit-card"></i> Payment Details</a></li>
+          <li id="delpref"><a href="#c" data-toggle="tab"><i class="fa fa-envelope-o"></i> Delivery</a></li>
+          
+        </ul>
+        <div class="tab-content">
+        <div class="tab-pane active" id="d">
+
+
+
+
+         </div>
+         <div class="tab-pane " id="a">
+
+
+<div class="col-md-3">
+<div class="row">
+<b>Number of Tickets:</b>
+</div>
+<div class="row">
+<div class="col-md-12">
+      <div class="input-group">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[2]">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+          <input type="text" name="quant[2]" class="form-control input-number" value="2" min="1" max="100">
+          <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+          </span>
+      </div>
+</div>
+</div>
+
+<div class="row" style="margin-top:20px"> 
+<b>Section:</b>
+<br>
+<span style="font-size:8px">Use the map or dropdown to refine your selection</span>
+<div class="form-group">
+  <label for="sel1"></label>
+  <select class="form-control" id="sel1">
+    <option>Standing (Blue)</option>
+    <option>Seated (Red)</option>
+  </select>
+</div>
+</div>
+
+<div class="row" style="margin-top:20px"> 
+<b>Price Range:</b>
+<br>
+
+<b>&euro;20</b> <input id="ex2" type="text" style="width:120px" class="span2" value="" data-slider-min="20" data-slider-max="80" data-slider-step="5" data-slider-value="[50,80]"/> <b>&euro;80</b>
+</div>
+
+<div class="row" style="margin-top:20px"> 
+<b>Additional:</b>
+<br>
+<label><input type="checkbox" value="">Wheelchair Ticket</label><br>
+<label><input type="checkbox" value="">Meet + Greet Ticket</label>
+</div>
+
+<div class="row" style="margin-top:20px"> 
+ <button onclick="ConfirmSeats()" type="button" class="btn btn-info">Confirm</button>
+</div>
+<!-- End of Div -->
+</div>
+
+<div class="col-md-6">
+<img src="images/map.gif" class="img-responsive">
+</div>
+         </div>
+         <div class="tab-pane" id="b">
+
+
+<div class="col-xs-7">
+<label for="cardNumber">Name on Card</label>
+<input type="tel" class="form-control" name="cardCVC" placeholder="Name" autocomplete="cc-csc" required/>
+<label for="cardNumber">Card Number</label>
+<div class="input-group">
+<input type="tel" class="form-control" name="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required autofocus />
+<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+</div>
+<label for="cardExpiry"><span class="hidden-xs">Expiration</span><span class="visible-xs-inline">EXP</span> Date</label>
+<input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+<label for="cardCVC">CCV Code</label>
+<input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required/>
+<button style="margin-top: 20px" onclick="ConfirmPay()" class="btn btn-info " >Save Payment</button>
+</div>
+           
+         </div>
+         <div class="tab-pane" id="c">
+<div class="col-xs-7">
+<label for="cardNumber">Preferred Delivery Method:</label><br>
+<label><input type="radio" value=""> Dispatch by email</label><br>
+<label><input type="radio" value=""> Dispatch by post</label>
+
+<input type="tel" class="form-control" name="cardCVC" placeholder="Email Address" autocomplete="cc-csc" required/>
+<label for="cardNumber">Postal Address</label>
+<div class="input-group">
+<input type="tel" class="form-control" name="cardNumber" placeholder="Postal Address" autocomplete="cc-number" required autofocus />
+<span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+</div>
+<button style="margin-top: 20px" onclick="ConfirmDelivery()" class="btn btn-info " >Save Delivery</button>
+</div>
+
+         </div>
+         
+        </div>
+      </div>
+      <!-- /tabs -->
+      
+    </div>   
+  </div><!-- /row -->
+</div>
+
+
+</div>
+
+</div>
+
+	
+	  
+	</div>
+
+
+
+	
+
+
+
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+  var seats = false;
+  var pay = false;
+  var delivery = false;
+
+$(document).ready(function() { 
+
+
+	setInterval(quiverDemand,4000)
+  $("#ex2").slider({});
+  var deadline = new Date(Date.parse(new Date()) + 1 * 1 * 3 * 60 * 1000);
+  initializeClock('clockdiv', deadline);
+});
+
+function ConfirmSeats() {
+
+seats = true;
+$('#seatspref').css('background-color', '#ccffcc')
+
+}
+
+function ConfirmPay() {
+pay = true;
+$('#paypref').css('background-color', '#ccffcc')
+
+}
+
+function ConfirmDelivery() {
+delivery = true;
+$('#delpref').css('background-color', '#ccffcc')
+
+}
+
+function getTimeRemaining(endtime) {
+
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
+}
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+    updateSearch(t.minutes+t.seconds);
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+function updateSearch(a) {
+
+  if( a>0 ) {
+    suggestFillOutForm();
+  } else {
+    showTickets();
+  }
+}
+
+function showTickets() {
+
+}
+
+function suggestFillOutForm() {
+  var html = "<div class='col-lg-6'>"
+  html += "<div class='waitingtext'>"
+  if(seats == false || pay == false || delivery == false)
+    html += "While you are waiting for this event to go on sale, why not save time and fill out the following sections:<br><ul>"
+  if(seats == false)
+    html += "<li>Seat + Ticket Preference"
+  if(pay == false)
+    html += "<li>Payment Details"
+  if(delivery == false)
+    html += "<li>Delivery"
+  html += "</ul></div></div>"
+    
+  $('#d').html(html)
+
+}
+
+$('.btn-number').click(function(e){
+    e.preventDefault();
+    
+    fieldName = $(this).attr('data-field');
+    type      = $(this).attr('data-type');
+    var input = $("input[name='"+fieldName+"']");
+    var currentVal = parseInt(input.val());
+    if (!isNaN(currentVal)) {
+        if(type == 'minus') {
+            
+            if(currentVal > input.attr('min')) {
+                input.val(currentVal - 1).change();
+            } 
+            if(parseInt(input.val()) == input.attr('min')) {
+                $(this).attr('disabled', true);
+            }
+
+        } else if(type == 'plus') {
+
+            if(currentVal < input.attr('max')) {
+                input.val(currentVal + 1).change();
+            }
+            if(parseInt(input.val()) == input.attr('max')) {
+                $(this).attr('disabled', true);
+            }
+
+        }
+    } else {
+        input.val(0);
+    }
+});
+$('.input-number').focusin(function(){
+   $(this).data('oldValue', $(this).val());
+});
+$('.input-number').change(function() {
+    
+    minValue =  parseInt($(this).attr('min'));
+    maxValue =  parseInt($(this).attr('max'));
+    valueCurrent = parseInt($(this).val());
+    
+    name = $(this).attr('name');
+    if(valueCurrent >= minValue) {
+        $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the minimum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    if(valueCurrent <= maxValue) {
+        $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+    } else {
+        alert('Sorry, the maximum value was reached');
+        $(this).val($(this).data('oldValue'));
+    }
+    
+    
+});
+$(".input-number").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+
+
+function quiverDemand() {
+	let max = 10;
+	let min = 1;
+
+	let val = Math.floor(Math.random() * (max - min)) + min;
+	let maxwid = $('#fullwidth').width();
+
+	let wid = $('#galwaydemand').width();
+	let dubwid = $('#dubdemand').width();
+	let corkwid = $('#corkdemand').width();
+	
+	let newval = 0;
+	if((wid/maxwid)*100 > 90) {
+		newval = wid - val;
+	} else {newval = wid + val}
+
+	$('#galwaydemand').width(newval);
+
+	if((dubwid/maxwid)*100 < 100) {
+		newval = dubwid + val;
+	} else {newval = dubwid - (val/2);}
+
+	$('#dubdemand').width(newval);
+
+	if((corkwid/maxwid)*100 > 60) {
+		newval = corkwid - val;
+	} else { newval = corkwid + (val/2)}
+
+	$('#corkdemand').width(newval);
+
+}
+</script>
+
+
+</body>
+</html>
