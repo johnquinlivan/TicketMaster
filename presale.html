@@ -25,6 +25,20 @@
   display: block;
 }
 
+.waitingtext {
+  text-align: left;
+  vertical-align: middle;
+  font-size:20px;
+  padding: 10px !important;
+}
+
+.msgbox {
+  max-height: 100px;
+  overflow: scroll;
+  padding:3px;
+  height:auto;
+}
+
 
 .tabs-left > .nav-tabs > li,
 .tabs-right > .nav-tabs > li {
@@ -122,30 +136,26 @@
   <div class="panel-heading">
     <h3 class="panel-title">Lady Antebellum - Roisin Dubh, Galway - Sept 23 2017</h3>
   </div>
+  <div class="panel-body">
 
-  <div class="panel panel-warning" style="margin-bottom: 0px">
+<div class="row">
+  <div class="col-xs-8">
+
+  <div class="panel panel-warning" >
   <div class="panel-heading">
     <h3 class="panel-title">Event Presale</h3>
+    </div>
   <div class="panel-body">
-  <div class="col-lg-6">
+  <div class="col-xs-8">
   Tickets are currently not on sale<br>
   Tickets on sale at 9am
   <br>
   <br>
-  <div class="progress">
-  <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-    Great Ticket Availability
   </div>
-</div>  
-<div class="progress">
-  <div id="galwaydemand" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-    High Ticket Demand
-  </div>
-</div>
-  </div>
-  <div class="col-lg-6">
+
+  <div class="col-xs-12">
   
-  <div id="clockdiv">
+  <div id="clockdiv" style="text-align: center; ">
   <div style="display: none">
     <span class="days"></span>
     <div class="smalltext">Days</div>
@@ -167,12 +177,50 @@
 </div>
 </div>
 </div>
+
+
+
+<div class="col-xs-4" >
+<div class="panel panel-info" >
+  <div class="panel-heading">
+    <h3 class="panel-title">Live Event Activity</h3>
+  </div>
+
+ 
+    
+  <div class="panel-body">
+  <div class="col-lg-12" id="maxwidth">
+  <div class="progress">
+  <div id="thisavail" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    Great Ticket Availability
+  </div>
+</div>  
+<div class="progress">
+  <div id="thisdemand" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    High Ticket Demand
+  </div>
+</div>
+  </div>
+  <div class="col-lg-12">
+  <div class="panel panel-default" style="margin-top:10px">
+  <div id="msgbox" class="panel-body msgbox">
+  <b>8:45am:</b><br> Event demand now 'High' <br>
+  <b>8:40am:</b><br> Event is attarcting attention - demand upgraded to 'Average'<br>
+  <b>8:30am:</b><br> Pre-sale opened! <br>
+  </div>
+  
+  
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
+
 <div class="container">
   <div class="row">
-    <div class="col-md-10"><h3>Ticket Search</h3>
+    <div class="col-md-11"><h3>Ticket Search</h3>
             
       <!-- tabs left -->
       <div class="tabbable tabs-left">
@@ -248,7 +296,7 @@
 <!-- End of Div -->
 </div>
 
-<div class="col-md-6">
+<div class="col-md-5">
 <img src="images/map.gif" class="img-responsive">
 </div>
          </div>
@@ -320,6 +368,9 @@
   var pay = false;
   var delivery = false;
 
+  var twomins = false;
+  var onemin = false;
+
 $(document).ready(function() { 
 
 
@@ -379,6 +430,7 @@ function initializeClock(id, endtime) {
     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
+    updateMsgBox(t.minutes, t.seconds)
     updateSearch(t.minutes+t.seconds);
 
     if (t.total <= 0) {
@@ -388,6 +440,16 @@ function initializeClock(id, endtime) {
 
   updateClock();
   var timeinterval = setInterval(updateClock, 1000);
+}
+
+function updateMsgBox(b, c) {
+  if(b == 2 && c < 50 && !twomins) {
+    var h = $('#msgbox').html();
+    var n = " <b>8:57am:</b><br> The Dublin Date remains the busiest of all dates within this presale<br>"
+    $('#msgbox').html(n+h);
+    twomins = true;
+  }
+
 }
 
 function updateSearch(a) {
@@ -400,6 +462,7 @@ function updateSearch(a) {
 }
 
 function showTickets() {
+
 
 }
 
@@ -499,31 +562,16 @@ function quiverDemand() {
 	let min = 1;
 
 	let val = Math.floor(Math.random() * (max - min)) + min;
-	let maxwid = $('#fullwidth').width();
+	let maxwid = $('#maxwidth').width();
 
-	let wid = $('#galwaydemand').width();
-	let dubwid = $('#dubdemand').width();
-	let corkwid = $('#corkdemand').width();
+	let wid = $('#thisdemand').width();
 	
 	let newval = 0;
 	if((wid/maxwid)*100 > 90) {
 		newval = wid - val;
 	} else {newval = wid + val}
 
-	$('#galwaydemand').width(newval);
-
-	if((dubwid/maxwid)*100 < 100) {
-		newval = dubwid + val;
-	} else {newval = dubwid - (val/2);}
-
-	$('#dubdemand').width(newval);
-
-	if((corkwid/maxwid)*100 > 60) {
-		newval = corkwid - val;
-	} else { newval = corkwid + (val/2)}
-
-	$('#corkdemand').width(newval);
-
+	$('#thisdemand').width(newval);
 }
 </script>
 
